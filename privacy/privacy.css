@@ -1,0 +1,288 @@
+/* 내 지갑 사정 개인정보처리방침 스타일. 외부 글꼴 없이 시스템 글꼴만 사용한다. */
+
+:root {
+  --bg: #fcfcfb;
+  --surface: #ffffff;
+  --border: #ecebe7;
+  --text: #1a1c1b;
+  --text-secondary: #6b706e;
+  --accent: #2f6f62;
+  --accent-soft: #eef5f3;
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: 16px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    "Malgun Gothic", "맑은 고딕", "Noto Sans KR", "Segoe UI", Roboto,
+    sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 56px 24px 72px;
+}
+
+/* ------------------------------------------------------------ header */
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+h1 {
+  margin: 0 0 28px;
+  font-size: 30px;
+  line-height: 1.35;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.meta,
+.contact {
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.meta > div,
+.contact > div {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 12px;
+}
+
+.meta dt,
+.contact dt {
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+.meta dd,
+.contact dd {
+  margin: 0;
+  font-size: 15px;
+}
+
+.page-header {
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ----------------------------------------------------------- content */
+
+section,
+nav {
+  padding-top: 36px;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 21px;
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+h2 .num {
+  color: var(--accent);
+  margin-right: 4px;
+}
+
+p {
+  margin: 0 0 14px;
+}
+
+ul,
+ol {
+  margin: 0 0 14px;
+  padding-left: 1.3em;
+}
+
+li {
+  margin: 4px 0;
+}
+
+li::marker {
+  color: var(--text-secondary);
+}
+
+strong {
+  font-weight: 600;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono",
+    monospace;
+  font-size: 0.9em;
+  overflow-wrap: anywhere;
+}
+
+/* 요약: 카드 대신 왼쪽 선 하나로만 구분한다. */
+.summary {
+  margin-top: 32px;
+  padding: 4px 0 4px 20px;
+  border-left: 3px solid var(--accent);
+}
+
+.summary ul {
+  margin-bottom: 0;
+}
+
+.toc ol {
+  columns: 2;
+  column-gap: 32px;
+  font-size: 16px;
+}
+
+.toc li {
+  margin: 0;
+  padding: 2px 0;
+  break-inside: avoid;
+}
+
+.toc a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.toc a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.note {
+  margin: 20px 0;
+  padding: 16px 20px;
+  background: var(--accent-soft);
+  border-radius: 12px;
+}
+
+.note p:last-child {
+  margin-bottom: 0;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 0 0 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+  padding: 10px 12px 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.page-footer {
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+/* ------------------------------------------------------------ mobile */
+
+@media (max-width: 560px) {
+  body {
+    font-size: 16px;
+  }
+
+  .page {
+    padding: 36px 18px 56px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  h2 {
+    font-size: 19px;
+  }
+
+  .meta > div,
+  .contact > div {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .meta > div + div,
+  .contact > div + div {
+    margin-top: 6px;
+  }
+
+  .toc ol {
+    columns: 1;
+  }
+
+  .summary {
+    padding-left: 16px;
+  }
+
+  th,
+  td {
+    padding-right: 10px;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .toc {
+    display: none;
+  }
+}
