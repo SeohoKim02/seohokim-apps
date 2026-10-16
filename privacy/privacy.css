@@ -109,6 +109,13 @@ h2 .num {
   margin-right: 4px;
 }
 
+h3 {
+  margin: 24px 0 8px;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
 p {
   margin: 0 0 14px;
 }
